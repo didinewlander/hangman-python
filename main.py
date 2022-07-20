@@ -49,7 +49,7 @@ def start_screen():
           print(symbols[2] + symbols[5]*(len(title)+6) + symbols[1])
           s = not s
           time.sleep(1)
-          os.system('clear')
+          os.system('cls')
      white = 255
      for i in range(11):
           color_print(white,white,white, symbols[0] + symbols[5]*(len(title)+6) + symbols[3])
@@ -57,7 +57,7 @@ def start_screen():
           color_print(white,white,white, symbols[4] + " "*3 + names + " "*3 + symbols[4])
           color_print(white,white,white,symbols[2] + symbols[5]*(len(title)+6) + symbols[1])
           time.sleep(0.4)
-          os.system('clear')
+          os.system('cls')
           white -= 25
      time.sleep(1)
 
@@ -88,15 +88,15 @@ def easy_mode(word, answer):
      while run:
           answer = "".join(solution)
           if answer == word:
-               os.system('clear')
+               os.system('cls')
                print ("CONGRATULATIONS! You got it right! The word was " + word)
                break
           if points > 7:
-               os.system('clear')
+               os.system('cls')
                print("We are sorry... you didn't get the word " + word)
                print_hangman(8)
                break
-          os.system('clear')
+          os.system('cls')
           print ("Welcome to the EASY level of the game.\nThis level gives you 8 chances to guess the word.\nGood luck\n")
           print("The word is " + answer)
           print_hangman(points)
@@ -133,16 +133,16 @@ def medium_mode(word, answer):
      while run:
           answer = "".join(solution)
           if answer == word:
-               os.system('clear')
+               os.system('cls')
                print ("CONGRATULATIONS! You got it right! The word was " + word)
                break
           if points > 7:
-               os.system('clear')
+               os.system('cls')
                print("We are sorry... you didn't get the word " + word)
                print_hangman(8)
                break
           
-          os.system('clear')
+          os.system('cls')
           print("Welcome to the MEDIUM level of the game.\nThis level gives you 5 chances to guess the word.\nGood luck\n")
           print("The word is " + answer)
           print_hangman(points)
@@ -179,16 +179,16 @@ def hard_mode(word, answer):
      while run:
           answer = "".join(solution)
           if answer == word:
-               os.system('clear')
+               os.system('cls')
                print ("CONGRATULATIONS! You got it right! The word was " + word)
                break
           if points > 7:
-               os.system('clear')
+               os.system('cls')
                print("We are sorry... you didn't get the word " + word)
                print_hangman(8)
                break
           
-          os.system('clear')
+          os.system('cls')
           print("Welcome to the HARD level of the game.\nThis level gives you 3 chances to guess the word.\nGood luck\n")
           print("The word is " + answer)
           print_hangman(points)
@@ -216,6 +216,7 @@ def hard_mode(word, answer):
 
 
 # main function of program
+
 start_screen()
 play = True
 print("Let us start the game")
@@ -224,32 +225,32 @@ while play:
      word = ""
      answer = ""
      word, answer = set_word(word, answer)
-     os.system('clear')
+     os.system('cls')
      select = int(input("Please select the level.\n 1- Easy Mode\n 2- Medium Mode\n 3- Hard Mode\nI selected level "))
      time.sleep(2)
      if select == 1:
           easy_mode(word, answer)
           time.sleep(3)
-          os.system('clear')
+          os.system('cls')
      elif select == 2:
           medium_mode(word, answer)
           time.sleep(3)
-          os.system('clear')
+          os.system('cls')
      elif select == 3:
           hard_mode(word, answer)
           time.sleep(3)
-          os.system('clear')
+          os.system('cls')
      else:
           print ("\nWrong selection. Game Shutdown!!!")
           exit()
      ask = input("Thanks for playing. would you like to play again? Y/N ").lower()
      if ask == "y":
-          os.system('clear')
+          os.system('cls')
           print ("Yay! let's play again!")
           play = True
           time.sleep(1)
      elif ask == "n":
-          os.system('clear')
+          os.system('cls')
           print("Thank you for playing with us today :)\nGoodbye!")
           play = False
           time.sleep(3)
